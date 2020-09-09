@@ -2,14 +2,31 @@
     <div class="todo-item">
         <div class="todo-item-content">
             <div class="todo-item-content-title">
-                Título
+                {{title}}
             </div>
             <div class="todo-item-content-description">
-                Descrição aqui
+                {{description}}
             </div>
         </div>
     </div>
 </template>
+
+<script>
+    export default {
+        //props: ['title', 'description']
+        props: {
+            title: {
+                type: String, // Array, Object, String, Number, Boolean, Function...
+                required: true
+            },
+            description: {
+                type: String,
+                required: false,
+                default: 'Default Description'
+            }
+        }
+    }
+</script>
 
 <style scoped lang="scss">
     $item-bgcolor: gray;
