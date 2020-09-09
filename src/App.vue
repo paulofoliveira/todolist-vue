@@ -6,7 +6,7 @@
                 <todo-list :todos="todos" />
                 <div class="todo-create-btn-container">
                     <div class="app-button">
-                        Create
+                        Criar
                     </div>
                 </div>
             </div>
