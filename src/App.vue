@@ -45,7 +45,10 @@
     }
 </script>
 
-<style>
+<style lang="scss">
+    $container-bgcolor: #ededed;
+    $item-bgcolor: gray;
+
     #app {
         font-family: Avenir, Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -55,33 +58,38 @@
         margin-top: 60px;
     }
 
-    .todo-wrapper {
-        display: flex;
+    .todo {
+        &-wrapper {
+            display: flex;
 
-        justify-content: center;
-        width: 100%;
-    }
+            justify-content: center;
+            width: 100%;
+        }
 
-    .todo-container {
-        width: 400px;
-        min-height: 400px;
-        background-color: #ededed;
-        border-radius: 5px;
-    }
+        &-container {
+            width: 400px;
+            min-height: 400px;
+            background-color: $container-bgcolor;
+            border-radius: 5px;
+        }
 
-    .todo-item {
-        background-color: gray;
-        min-height: 70px;
-        margin: 10px;
-        padding: 10px;
-        color: white;
-        border-radius: 5px;
-        font-size: 23px;
-    }
-    .todo-item-content-title {
-        font-weight: bold;
-    }
-    .todo-item-content-description {
-        font-size: 19px;
+        &-item {
+            background-color: $item-bgcolor;
+            min-height: 70px;
+            margin: 10px;
+            padding: 10px;
+            color: white;
+            border-radius: 5px;
+            font-size: 23px;
+
+            &-content {
+                &-title {
+                    font-weight: bold;
+                }
+                &-description {
+                    font-size: 19px;
+                }
+            }
+        }
     }
 </style>
