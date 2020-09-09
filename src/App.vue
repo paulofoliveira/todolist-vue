@@ -2,52 +2,27 @@
     <div id="app">
         <div class="todo-wrapper">
             <div class="todo-container">
-                <div class="todo-list">
-                    <div class="todo-item">
-                        <div class="todo-item-content">
-                            <div class="todo-item-content-title">
-                                Fazer caminhada
-                            </div>
-                            <div class="todo-item-content-description">
-                                Faz bem para a saúde!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="todo-item">
-                        <div class="todo-item-content">
-                            <div class="todo-item-content-title">
-                                Ir ao mercado
-                            </div>
-                            <div class="todo-item-content-description">
-                                Precisa comprar algumas coisas que estão faltando =/
-                            </div>
-                        </div>
-                    </div>
-                    <div class="todo-item">
-                        <div class="todo-item-content">
-                            <div class="todo-item-content-title">
-                                Estudar VueJS
-                            </div>
-                            <div class="todo-item-content-description">
-                                Para evoluir é preciso estudar os conceitos
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!--<TodoList />-->
+                <todo-list />
             </div>
         </div>
     </div>
 </template>
 
 <script>
+
+    import TodoList from './components/TodoList'
+
     export default {
-        name: 'App'
+        name: 'App',
+        components: {
+            TodoList
+        }
     }
 </script>
 
 <style lang="scss">
     $container-bgcolor: #ededed;
-    $item-bgcolor: gray;
 
     #app {
         font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -71,25 +46,6 @@
             min-height: 400px;
             background-color: $container-bgcolor;
             border-radius: 5px;
-        }
-
-        &-item {
-            background-color: $item-bgcolor;
-            min-height: 70px;
-            margin: 10px;
-            padding: 10px;
-            color: white;
-            border-radius: 5px;
-            font-size: 23px;
-
-            &-content {
-                &-title {
-                    font-weight: bold;
-                }
-                &-description {
-                    font-size: 19px;
-                }
-            }
         }
     }
 </style>
