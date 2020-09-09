@@ -6,30 +6,30 @@
                     <div class="todo-item">
                         <div class="todo-item-content">
                             <div class="todo-item-content-title">
-                                Walk the dog
+                                Fazer caminhada
                             </div>
                             <div class="todo-item-content-description">
-                                Go to forest near the Zoo
+                                Faz bem para a saúde!
                             </div>
                         </div>
                     </div>
                     <div class="todo-item">
                         <div class="todo-item-content">
                             <div class="todo-item-content-title">
-                                Buy a bread
+                                Ir ao mercado
                             </div>
                             <div class="todo-item-content-description">
-                                Whole grain bread would be good
+                                Precisa comprar algumas coisas que estão faltando =/
                             </div>
                         </div>
                     </div>
                     <div class="todo-item">
                         <div class="todo-item-content">
                             <div class="todo-item-content-title">
-                                Learn programming
+                                Estudar VueJS
                             </div>
                             <div class="todo-item-content-description">
-                                Tomorrow would be best!
+                                Para evoluir é preciso estudar os conceitos
                             </div>
                         </div>
                     </div>
