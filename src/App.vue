@@ -74,10 +74,16 @@
         }
 
         &-container {
+            display: flex;
+            flex-direction: column;
             width: 400px;
             min-height: 400px;
             background-color: $container-bgcolor;
             border-radius: 5px;
+        }
+
+        &-create-btn-container {
+            margin: 10px;
         }
     }
 
@@ -88,6 +94,10 @@
         background-color: #795899;
         color: white;
         font-weight: bold;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
     .modal {
         display: none;
