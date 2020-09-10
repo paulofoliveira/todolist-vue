@@ -5,13 +5,13 @@
                 <!--<TodoList />-->
                 <todo-list :todos="todos" />
                 <div class="todo-create-btn-container">
-                    <div class="app-button">
+                    <div class="app-button" v-on:click="openModal">
                         Criar
                     </div>
                 </div>
             </div>
         </div>
-        <Modal />
+        <Modal :isOpen="isModalOpen" />
     </div>
 </template>
 
@@ -45,7 +45,13 @@
                         title: 'Ir ao Mercado',
                         description: 'Preciso comprar algumas coisas'
                     }
-                ]
+                ],
+                isModalOpen: false
+            }
+        },
+        methods: {
+            openModal () {
+                this.isModalOpen = !this.isModalOpen
             }
         }
     }
