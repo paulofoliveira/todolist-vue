@@ -1,5 +1,5 @@
 <template>
-    <Modal>
+    <Modal ref="modal">
         <form class="app-form">
             <div class="form-control">
                 <label class="label">Título</label>
@@ -29,6 +29,7 @@
                     title: '',
                     description: ''
                 }
+                //forceClose: false
             }
         },
         methods: {
@@ -43,6 +44,12 @@
 
                 if (this.isFormValid) {
                     this.$emit('formSubmitted', data)
+
+                    //this.forceClose = true
+                    //this.$nextTick(() => this.forceClose = false)
+
+                    this.$refs.modal.closeModal()
+
                     this.resetForm()
                 }
 

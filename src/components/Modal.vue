@@ -5,7 +5,7 @@
         </div>
         <div class="modal" :class="{'is-active' : isOpen}">
             <div class="modal-content">
-                <span class="close" @click="isOpen = false">&times;</span>
+                <span class="close" @click="closeModal">&times;</span>
                 <slot /><!-- Permite renderizar conteudo dentro do componente -->
             </div>
         </div>
@@ -20,7 +20,30 @@
             return {
                 isOpen: false
             }
+        },
+
+        methods: {
+            closeModal () {
+                this.isOpen = false
+            }
         }
+
+        /*props: {
+            close: {
+                type: Boolean,
+                required: false
+            }
+        },
+        watch: {
+            close (isClose, prevIsClose) {
+
+                console.log(prevIsClose)
+
+                if (isClose && this.isOpen) {
+                    this.isOpen = false
+                }
+            }
+        }*/
 
         /*props: {
             isOpen: {
