@@ -5,7 +5,7 @@
                 <!--<TodoList />-->
                 <todo-list :todos="todos" />
                 <div class="todo-create-btn-container">
-                    <TodoCreate />
+                    <TodoCreate @formSubmitted="createTodo" />
                 </div>
             </div>
         </div>
@@ -28,17 +28,17 @@
             return {
                 todos: [
                     {
-                        _id: '1',
+                        _id: 1,
                         title: 'Assistir o Tricolor',
                         description: 'Hoje tem São Paulo!'
                     },
                     {
-                        _id: '2',
+                        _id: 2,
                         title: 'Estudar VueJS',
                         description: 'É necessário estudar conceitos para evoluir!'
                     },
                     {
-                        _id: '3',
+                        _id: 3,
                         title: 'Ir ao Mercado',
                         description: 'Preciso comprar algumas coisas'
                     }
@@ -46,10 +46,16 @@
             }
         },
         methods: {
-            toggleModal () {
+            /*toggleModal () {
                 this.isModalOpen = !this.isModalOpen
                 console.log(`${this.isModalOpen ? 'Abrindo' : 'Fechando'} modal...`)
+            }*/
+
+            createTodo (data) {
+                data._id = this.todos.length + 1
+                this.todos.push(data)
             }
+
         }
     }
 </script>
