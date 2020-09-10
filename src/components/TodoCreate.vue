@@ -48,7 +48,7 @@
                     //this.forceClose = true
                     //this.$nextTick(() => this.forceClose = false)
 
-                    this.$refs.modal.closeModal()
+                    this.modal.closeModal()
 
                     this.resetForm()
                 }
@@ -62,6 +62,9 @@
         computed: {
             isFormValid () {
                 return this.form.title && this.form.description
+            },
+            modal () {
+                return this.$refs.modal
             }
         }
     }
