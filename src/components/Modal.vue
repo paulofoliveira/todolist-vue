@@ -6,7 +6,17 @@
         <div class="modal" :class="{'is-active' : isOpen}">
             <div class="modal-content">
                 <span class="close" @click="isOpen = false">&times;</span>
-                <p>Modal Window</p>
+                <form class="app-form">
+                    <div class="form-control">
+                        <label class="label">Título</label>
+                        <input class="form-input" type="text">
+                    </div>
+                    <div class="form-control">
+                        <label class="label">Descrição</label>
+                        <input class="form-input" type="text">
+                    </div>
+                    <button type="button" class="app-button is-primary">Confirmar</button>
+                </form>
             </div>
         </div>
     </div>
@@ -67,10 +77,32 @@
             padding: 20px;
             border: 1px solid #888;
             width: 80%;
+            text-align: left;
         }
 
         &.is-active {
             display: block;
+        }
+    }
+
+    /* Form */
+
+    .app-form {
+        .label {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .form-input {
+            padding: 10px;
+            font-size: 17px;
+        }
+        .form-input {
+            padding: 10px;
+            font-size: 17px;
+        }
+        .form-control {
+            margin-bottom: 10px;
         }
     }
 </style>
