@@ -6,17 +6,7 @@
         <div class="modal" :class="{'is-active' : isOpen}">
             <div class="modal-content">
                 <span class="close" @click="isOpen = false">&times;</span>
-                <form class="app-form">
-                    <div class="form-control">
-                        <label class="label">Título</label>
-                        <input class="form-input" type="text" v-model="form.title">
-                    </div>
-                    <div class="form-control">
-                        <label class="label">Descrição</label>
-                        <input class="form-input" type="text" v-model="form.description">
-                    </div>
-                    <button type="button" class="app-button is-primary" @click="createTodo">Confirmar</button>
-                </form>
+                <slot /><!-- Permite renderizar conteudo dentro do componente -->
             </div>
         </div>
     </div>
@@ -28,16 +18,7 @@
 
         data () {
             return {
-                isOpen: false,
-                form: {
-                    title: '',
-                    description: ''
-                }
-            }
-        },
-        methods: {
-            createTodo () {
-                console.log(this.form)
+                isOpen: false
             }
         }
 
@@ -91,27 +72,6 @@
 
         &.is-active {
             display: block;
-        }
-    }
-
-    /* Form */
-
-    .app-form {
-        .label {
-            display: block;
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .form-input {
-            padding: 10px;
-            font-size: 17px;
-        }
-        .form-input {
-            padding: 10px;
-            font-size: 17px;
-        }
-        .form-control {
-            margin-bottom: 10px;
         }
     }
 </style>
