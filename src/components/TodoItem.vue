@@ -8,6 +8,8 @@
                 {{description}}
             </div>
         </div>
+        <button @click="editTodo" class="app-button is-warning">Editar</button>
+        <button @click="deleteTodo" class="app-button is-danger">Excluir</button>
     </div>
 </template>
 
@@ -24,8 +26,18 @@
                 required: false,
                 default: 'Default Description'
             }
+        },
+
+        methods: {
+            editTodo () {
+                alert('Editar tarefa!')
+            },
+            deleteTodo () {
+                alert('Excluir tarefa!')
+            }
         }
     }
+
 </script>
 
 <style scoped lang="scss">
@@ -42,6 +54,8 @@
             font-size: 23px;
 
             &-content {
+                margin-bottom: 10px;
+
                 &-title {
                     font-weight: bold;
                 }
@@ -49,6 +63,13 @@
                     font-size: 19px;
                 }
             }
+        }
+    }
+
+    .app-button {
+        font-size: 15px;
+        &.is-warning {
+            margin-right: 5px;
         }
     }
 </style>
