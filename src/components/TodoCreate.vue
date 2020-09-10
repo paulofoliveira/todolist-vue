@@ -41,13 +41,20 @@
 
                 // let data = {...this.form}
 
-                this.$emit('formSubmitted', data)
-                this.resetForm()
+                if (this.isFormValid) {
+                    this.$emit('formSubmitted', data)
+                    this.resetForm()
+                }
 
             },
             resetForm () {
                 this.form.title = ''
                 this.form.description = ''
+            }
+        },
+        computed: {
+            isFormValid () {
+                return this.form.title && this.form.description
             }
         }
     }
