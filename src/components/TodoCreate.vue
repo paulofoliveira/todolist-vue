@@ -3,11 +3,16 @@
         <form class="app-form">
             <div class="form-control">
                 <label class="label">Título</label>
-                <input class="form-input" type="text" v-model="form.title">
+                <input type="text" class="form-input" v-model="form.title">
             </div>
             <div class="form-control">
                 <label class="label">Descrição</label>
-                <textarea class="form-input" v-model="form.description" cols="30" rows="5"></textarea>
+                <textarea class="form-input form-control-last " v-model="form.description" cols="30" rows="5"></textarea>
+            </div>
+            <div class="app-error">
+                <div class="form-error">
+                    {{formError}}
+                </div>
             </div>
             <button type="button" class="app-button is-primary" @click="submitForm">Confirmar</button>
         </form>
@@ -28,7 +33,8 @@
                 form: {
                     title: '',
                     description: ''
-                }
+                },
+                formError: ''
                 //forceClose: false
             }
         },
@@ -52,11 +58,15 @@
 
                     this.resetForm()
                 }
+                else {
+                    this.formError = 'É necessário informar o Título e a Descrição acima de 8 e 10 caracteres'
+                }
 
             },
             resetForm () {
                 this.form.title = ''
                 this.form.description = ''
+                this.formError = ''
             }
         },
         computed: {
@@ -69,3 +79,9 @@
         }
     }
 </script>
+
+<style scoped>
+    .form-error {
+        margin-bottom: 10px;
+    }
+</style>

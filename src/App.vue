@@ -122,12 +122,17 @@
             padding: 10px;
             font-size: 17px;
         }
-        .form-input {
-            padding: 10px;
-            font-size: 17px;
-        }
+
         .form-control {
             margin-bottom: 10px;
+
+            &-last {
+                margin-bottom: 0;
+            }
         }
+    }
+
+    .app-error {
+        color: #ff1212;
     }
 </style>
