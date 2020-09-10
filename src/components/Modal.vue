@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="app-button" @click="isOpen = true">
-            Criar
+            Adicionar uma Tarefa
         </div>
         <div class="modal" :class="{'is-active' : isOpen}">
             <div class="modal-content">
