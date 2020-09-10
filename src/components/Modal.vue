@@ -1,7 +1,7 @@
 <template>
     <div class="modal" :class="{'is-active' : isOpen}">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" @click="closeModal">&times;</span>
             <p>Modal Window</p>
         </div>
     </div>
@@ -13,6 +13,12 @@
             isOpen: {
                 type: Boolean,
                 default: false
+            }
+        },
+        methods: {
+            closeModal () {
+                // this.isOpen = false Causa erro  Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop's value. Prop being mutated: "isOpen"
+                this.$emit('modalClosed')
             }
         }
     }

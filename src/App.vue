@@ -5,13 +5,13 @@
                 <!--<TodoList />-->
                 <todo-list :todos="todos" />
                 <div class="todo-create-btn-container">
-                    <div class="app-button" v-on:click="openModal">
+                    <div class="app-button" @click="toggleModal">
                         Criar
                     </div>
                 </div>
             </div>
         </div>
-        <Modal :isOpen="isModalOpen" />
+        <Modal :isOpen="isModalOpen" v-on:modalClosed="toggleModal" />
     </div>
 </template>
 
@@ -50,8 +50,9 @@
             }
         },
         methods: {
-            openModal () {
+            toggleModal () {
                 this.isModalOpen = !this.isModalOpen
+                console.log(`${this.isModalOpen ? 'Abrindo' : 'Fechando'} modal...`)
             }
         }
     }
