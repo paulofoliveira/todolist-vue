@@ -61,7 +61,7 @@
         },
         computed: {
             isFormValid () {
-                return this.form.title && this.form.description
+                return this.form.title.length >= 8 && this.form.description.length >= 10
             },
             modal () {
                 return this.$refs.modal
