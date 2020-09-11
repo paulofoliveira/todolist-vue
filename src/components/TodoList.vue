@@ -4,7 +4,7 @@
         <TodoItem v-bind:title="todos[1].title" v-bind:description="todos[1].description" />
         <TodoItem v-bind:title="todos[2].title" v-bind:description="todos[2].description" />-->
 
-        <TodoItem v-for="todo in todos" :key="todo._id" :title="todo.title" :description="todo.description"></TodoItem>
+        <TodoItem v-for="todo in todos" :key="todo._id" :title="todo.title" :description="todo.description" :_id="todo._id"></TodoItem>
 
         <!--<TodoItem :title="'Estudar VueJS'" :description="'É necessário estudar conceitos para evoluir!'" />
         <TodoItem :title="todoTitle" :description="todoDescription" />-->

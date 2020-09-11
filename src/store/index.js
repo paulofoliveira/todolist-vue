@@ -1,4 +1,6 @@
 
+import Vue from 'vue'
+
 const getUniqueId = () => {
     return Math.random().toString(36).substr(2, 7)
 }
@@ -37,6 +39,13 @@ const store = {
         createTodo (state, todo) {
             todo._id = getUniqueId()
             state.todos.push(todo)
+        },
+
+        updateTodo (state, todo) {
+            let index = state.todos.findIndex(p => p._id === todo._id)
+
+            //state.todos[index] = todo
+            Vue.set(state.todos, index, todo)
         }
     }
 

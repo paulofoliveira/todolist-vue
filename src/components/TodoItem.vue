@@ -16,11 +16,11 @@
         <form class="app-form">
             <div class="form-control">
                 <label class="label">Title</label>
-                <input class="form-input" type="text" :value="title">
+                <input class="form-input" type="text" v-model="todo.title">
             </div>
             <div class="form-control form-control-last">
                 <label class="label">Description</label>
-                <textarea cols="30" rows="2" class="form-input" :value="description"></textarea>
+                <textarea cols="30" rows="2" class="form-input" v-model="todo.description"></textarea>
             </div>
             <button @click.prevent="editTodo" class="app-button is-warning">Atualizar</button>
             <button @click.prevent="editMode = false" class="app-button is-danger">Cancelar</button>
@@ -29,10 +29,18 @@
 </template>
 
 <script>
+
+    import store from '@/store'
+
     export default {
         data () {
             return {
-                editMode: false
+                editMode: false,
+                todo: {
+                    _id: this._id,
+                    title: this.title,
+                    description: this.description
+                }
             }
         },
         //props: ['title', 'description']
@@ -45,12 +53,16 @@
                 type: String,
                 required: false,
                 default: 'Default Description'
+            },
+            _id: {
+                type: String,
+                required: true
             }
         },
 
         methods: {
             editTodo () {
-                console.log('Editar tarefa!')
+                store.dispatch('updateTodo', { ...this.todo })
                 this.editMode = false
             },
             deleteTodo () {
