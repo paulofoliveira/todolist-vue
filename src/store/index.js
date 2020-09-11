@@ -4,6 +4,15 @@ const getUniqueId = () => {
 }
 
 const store = {
+
+    dispatch: function (action, payload) {
+
+        if (!this.actions[action])
+            throw new Error(`Action ${action} is not defined in the store`)
+
+        return this.actions[action](this.state, payload)
+    },
+
     state: {
         todos: [
             {
@@ -32,13 +41,5 @@ const store = {
     }
 
 }
-
-
-store.dispatch = function (action, payload) {
-    if (!this.actions[action]) return
-    return this.actions[action](this.state, payload)
-}
-
-
 
 export default store
