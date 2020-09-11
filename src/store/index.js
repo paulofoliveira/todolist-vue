@@ -4,7 +4,6 @@ const getUniqueId = () => {
 }
 
 const store = {
-
     state: {
         todos: [
             {
@@ -24,10 +23,22 @@ const store = {
             }
         ]
     },
-    createTodo (data) {
-        data._id = getUniqueId()
-        this.state.todos.push(data)
+
+    actions: {
+        createTodo (state, todo) {
+            todo._id = getUniqueId()
+            state.todos.push(todo)
+        }
     }
+
 }
+
+
+store.dispatch = function (action, payload) {
+    if (!this.actions[action]) return
+    return this.actions[action](this.state, payload)
+}
+
+
 
 export default store

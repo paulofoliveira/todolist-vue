@@ -59,7 +59,7 @@
                     this.resetForm()
                 }
                 else {
-                    this.formError = 'É necessário informar o Título e a Descrição acima de 8 e 10 caracteres'
+                    this.formError = 'É necessário informar o Título e a Descrição acima de 3 e 5 caracteres'
                 }
 
             },
@@ -71,7 +71,7 @@
         },
         computed: {
             isFormValid () {
-                return this.form.title.length >= 8 && this.form.description.length >= 10
+                return this.form.title.length >= 3 && this.form.description.length >= 5
             },
             modal () {
                 return this.$refs.modal

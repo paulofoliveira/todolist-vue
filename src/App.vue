@@ -37,8 +37,8 @@
                 console.log(`${this.isModalOpen ? 'Abrindo' : 'Fechando'} modal...`)
             }*/
 
-            createTodo (data) {
-                store.createTodo(data)
+            createTodo (todo) {
+                store.dispatch('createTodo', todo)
             }
 
         }
