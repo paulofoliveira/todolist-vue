@@ -9,19 +9,21 @@
             </div>
         </div>
         <button @click="editMode = true" class="app-button is-warning">Editar</button>
+        <button @click="deleteTodo" class="app-button is-danger">Excluir
+        </button>
     </div>
     <div v-else class="todo-item">
         <form class="app-form">
             <div class="form-control">
                 <label class="label">Title</label>
-                <input class="form-input" type="text">
+                <input class="form-input" type="text" :value="title">
             </div>
             <div class="form-control form-control-last">
                 <label class="label">Description</label>
-                <textarea cols="30" rows="2" class="form-input"></textarea>
+                <textarea cols="30" rows="2" class="form-input" :value="description"></textarea>
             </div>
-            <button @click="editMode = false" class="app-button is-warning">Atualizar</button>
-            <button @click="deleteTodo" class="app-button is-danger">Excluir</button>
+            <button @click.prevent="editTodo" class="app-button is-warning">Atualizar</button>
+            <button @click.prevent="deleteTodo" class="app-button is-danger">Excluir</button>
         </form>
     </div>
 </template>
@@ -48,10 +50,11 @@
 
         methods: {
             editTodo () {
-                this.editMode = true
+                console.log('Editar tarefa!')
+                this.editMode = false
             },
             deleteTodo () {
-                alert('Excluir tarefa!')
+                console.log('Excluir tarefa!')
             }
         }
     }
