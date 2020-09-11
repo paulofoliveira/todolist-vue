@@ -23,7 +23,7 @@
                 <textarea cols="30" rows="2" class="form-input" :value="description"></textarea>
             </div>
             <button @click.prevent="editTodo" class="app-button is-warning">Atualizar</button>
-            <button @click.prevent="deleteTodo" class="app-button is-danger">Excluir</button>
+            <button @click.prevent="editMode = false" class="app-button is-danger">Cancelar</button>
         </form>
     </div>
 </template>
