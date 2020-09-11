@@ -17,6 +17,8 @@
     import TodoList from '@/components/TodoList'
     import TodoCreate from '@/components/TodoCreate'
 
+    import store from '@/store'
+
     export default {
         name: 'App',
         components: {
@@ -26,23 +28,7 @@
 
         data () {
             return {
-                todos: [
-                    {
-                        _id: 1,
-                        title: 'Assistir o Tricolor',
-                        description: 'Hoje tem São Paulo!'
-                    },
-                    {
-                        _id: 2,
-                        title: 'Estudar VueJS',
-                        description: 'É necessário estudar conceitos para evoluir!'
-                    },
-                    {
-                        _id: 3,
-                        title: 'Ir ao Mercado',
-                        description: 'Preciso comprar algumas coisas'
-                    }
-                ]
+                todos: store.state.todos
             }
         },
         methods: {
@@ -52,8 +38,7 @@
             }*/
 
             createTodo (data) {
-                data._id = this.todos.length + 1
-                this.todos.push(data)
+                store.createTodo(data)
             }
 
         }
