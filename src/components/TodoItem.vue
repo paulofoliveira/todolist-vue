@@ -66,7 +66,10 @@
                 this.editMode = false
             },
             deleteTodo () {
-                console.log('Excluir tarefa!')
+
+                if (!confirm('Deseja remover a tarefa?')) return
+
+                store.dispatch('deleteTodo', this.todo._id)
             }
         }
     }

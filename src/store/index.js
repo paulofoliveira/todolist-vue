@@ -46,6 +46,11 @@ const store = {
 
             //state.todos[index] = todo
             Vue.set(state.todos, index, todo)
+        },
+
+        deleteTodo (state, id) {
+            let index = state.todos.findIndex(p => p._id === id)
+            state.todos.splice(index, 1)
         }
     }
 
