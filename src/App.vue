@@ -41,6 +41,10 @@
                 store.dispatch('createTodo', todo)
             }
 
+        },
+
+        created () {
+            this.todos = store.dispatch('initialStore', store.state)
         }
     }
 </script>
